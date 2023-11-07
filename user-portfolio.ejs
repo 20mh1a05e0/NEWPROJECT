@@ -1,0 +1,270 @@
+<html lang="en">
+<head>
+    <!-- ... (head section) ... -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #user-info {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #user-info p {
+            font-size: 18px;
+        }
+
+        /* Style the Projects and Skills sections */
+        #projects, #skills {
+            margin: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #projects h2, #skills h2 {
+            font-size: 24px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Style the Contact Me section */
+        #contact {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .headings {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #msg {
+            height: 150px;
+        }
+
+        #send {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #send:hover {
+            background-color: #555;
+        }
+
+        /* Add any additional styles as needed */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>User Portfolio: <%= user.name %></h1>
+    </header>
+    <section id="user-info">
+        <p><strong>Username:</strong> <%= user.name %></p>
+        <p><strong>Email:</strong> <%= user.email %></p>
+    </section>
+    <!-- Display user's projects -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <% user.projects.forEach(project => { %>
+                <li><%= project %></li>
+            <% }); %>
+        </ul>
+    </section>
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <% user.skills.forEach(skill => { %>
+                <li><%= skill %></li>
+            <% }); %>
+        </ul>
+    </section>
+    
+    
+    <!-- Academic section -->
+    <% if (user.name === 'amma') { %>
+        <!-- User amma's portfolio content -->
+        <section id="graph" style="color: rgb(255, 165, 0)">
+          
+            <div class="container">
+                <h2>ACADEMIC RESULTS</h2>
+    
+                <div class="pie-chart-container">
+                    <canvas id="pie-chart"></canvas>
+                </div>
+                
+                <div class="skills">
+                    <div class="skill">
+                    </div>
+                </div>
+            </div>
+            <script>
+                const pieData2 = {
+                    labels: ['1-1', '1-2', '2-1', '2-2', '3-1', '3-2'],
+                    datasets: [{
+                        data: [33, 44, 55, 66, 77, 88],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9900']
+                    }]
+                };
+                const pieChartElementss = document.getElementById('pie-chart').getContext('2d');
+                new Chart(pieChartElementss, {
+                    type: 'pie',
+                    data: pieData2,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false
+                    }
+                });
+            </script>
+        </section>
+    <% } else if (user.name === 'divya') { %>
+        <!-- User divya's portfolio content -->
+        <section id="graph" style="color: rgb(255, 165, 0)">
+            <div class="container">
+                <h2>ACADEMIC RESULTS</h2>
+    
+                <div class "pie-chart-container">
+                    <canvas id="pie-chart"></canvas>
+                </div>
+            <script>
+                const pieData = {
+                    labels: ['1-1', '1-2', '2-1', '2-2', '3-1', '3-2'],
+                    datasets: [{
+                        data: [50, 48, 55, 69, 97, 58],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9900']
+                    }]
+                };
+                const pieChartElements = document.getElementById('pie-chart').getContext('2d');
+                new Chart(pieChartElements, {
+                    type: 'pie',
+                    data: pieData,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false
+                    }
+                });
+            </script>
+        </section>
+    <% } else if (user.name === 'sri') { %>
+        <!-- User divya's portfolio content -->
+        <section id="graph" style="color: rgb(255, 165, 0)">
+            <div class="container">
+                <h2>ACADEMIC RESULTS</h2>
+    
+                <div class "pie-chart-container">
+                    <canvas id="pie-chart"></canvas>
+                </div>
+            <script>
+                const pieData3 = {
+                    labels: ['1-1', '1-2', '2-1', '2-2', '3-1', '3-2'],
+                    datasets: [{
+                        data: [50, 48, 55, 69, 97, 58],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9900']
+                    }]
+                };
+                const pieChartElementssss = document.getElementById('pie-chart').getContext('2d');
+                new Chart(pieChartElementssss, {
+                    type: 'pie',
+                    data: pieData3,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false
+                    }
+                });
+            </script>
+        </section>
+    <% } else if (user.username === 'satya') { %>
+        <!-- User hi's portfolio content -->
+        <section id="graph" style="color: rgb(255, 165, 0)">
+            <h1 class="headings">ACADEMIC RESULTS</h1>
+            <div class="container">
+                
+    
+                <div class="pie-chart-container">
+                    <canvas id="pie-chart"></canvas>
+                </div>
+    
+            </div>
+            <script>
+                const pieData1 = {
+                    labels: ['1-1', '1-2', '2-1', '2-2', '3-1', '3-2'],
+                    datasets: [{
+                        data: [100, 45, 56, 66, 79, 80],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9900']
+                    }]
+                };
+                const pieChartElementsss = document.getElementById('pie-chart').getContext('2d');
+                new Chart(pieChartElementsss, {
+                    type: 'pie',
+                    data: pieData1,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false
+                    }
+                });
+            </script>
+        </section>
+    <% } else { %>
+        <!-- Default content for other users -->
+        <div id="no-portfolio">
+            <h2>No portfolio data available for this user</h2>
+        </div>
+    <% } %>
+    
+    
+    <!-- Contact Me section -->
+    <section id="contact">
+        <h1 class="headings">CONTACT ME</h1>
+        <form action="" class="form">
+            <input type="text" name="name" class="input" placeholder="Enter Your Name">
+            <input type="email" name="email" class="input" placeholder="Enter Your Email">
+            <textarea name="msg" id="msg" cols="30" rows="10" placeholder="Enter Your Message"></textarea>
+            <input type="submit" value="SEND" id="send">
+        </form>
+    </section>
+    <footer>
+        <p>&copy; <%= new Date().getFullYear() %> <%= user.username %></p>
+    </footer>
+</body>
+</html>

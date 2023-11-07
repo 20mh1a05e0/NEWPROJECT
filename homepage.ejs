@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration and Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #007BFF;
+        }
+
+        .container {
+           
+            padding: 50px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            max-width: 400px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(23, 22, 22, 0.919);
+            animation: backgroundBlink 3s infinite alternate; /* Add the animation to the container */
+            margin: 200px auto;
+           
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        @keyframes backgroundBlink {
+            0% {
+                background-color: #f4f4f4;
+            }
+            20% {
+                background-color: #d49e77;
+            }
+            30% {
+                background-color: #82b78d;
+            }
+        }
+
+        .sidebar {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 200px;
+        }
+
+        .arrow {
+            border: solid #fff;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            cursor: pointer;
+        }
+
+        .arrow.left {
+            transform: rotate(135deg);
+        }
+
+        .arrow.left:hover {
+            background-color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="sidebar">
+        
+        
+        <h6>WELCOME TO ADMIN LOGIN PAGE</h6>
+        <center><a href="/admin-login" class="arrow left"></a></center>
+    
+    </div>
+    
+    <div class="container">
+        <h1>Welcome to Our Tech Journey</h1>
+        <div class="buttons">
+            <a href="/register" class="button">Register</a>
+            <a href="/login" class="button">Login</a>
+        </div>
+    </div>
+</body>
+</html>

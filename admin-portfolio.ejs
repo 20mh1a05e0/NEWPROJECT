@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            /* background-color: rgba(255, 0, 0, 0.5); */
+            /* background-color: rgba(0, 128, 255, 0.5);  */
+             /* background-color: rgba(255, 69, 0, 0.5);  */
+             background-color: rgba(128, 0, 128, 0.5); 
+            /* background-color: rgba(70, 130, 180, 0.5); */
+        }
+    
+        h1 {
+            color: #333;
+            opacity: 0; /* Initially, set opacity to 0 */
+            animation: fadeIn 1s ease-in-out 1000; /* Apply the fadeIn animation */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    
+        label {
+            font-weight: bold;
+        }
+    
+        select {
+            padding: 5px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Admin logged!</h1>
+    <label for="userSelect">Select a User:</label> 
+    <select id="userSelect" onchange="viewPortfolio()">
+        <option value="">Select a user</option>
+        <% users.forEach(user => { %>
+            <option value="/admin-portfolio/<%= user._id %>"><%= user.name %></option>
+        <% }); %>
+    </select>
+    
+    <script>
+        function viewPortfolio() {
+            const userSelect = document.getElementById("userSelect");
+            const selectedUserId = userSelect.value;
+            if (selectedUserId) {
+                window.location.href = selectedUserId;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Login</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190625/ourmid/pngtree-sky-blue-ink-style-background-image_260100.jpg");
+    background-size: cover; /* Optionally, to cover the entire background */
+    background-repeat: no-repeat; /* Optionally, to prevent repeating the background */
+}
+.fa-user {
+            font-size: 50px;
+        }
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:#000;
+    color: white;
+    width: 25rem;
+    border-radius: 10px;
+    padding: 5em 2rem;
+    box-shadow: 0px 0px 20px 0px rgb(33, 6, 6);
+    border: 1px solid black;
+}
+
+.login-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.userName,
+.userPassword {
+    text-align: center;
+    border: 2px solid cyan;
+    margin: 1rem;
+    color: white;
+    background: transparent;
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    width: 15rem;
+    font-size: 1.2rem;
+    outline: none;
+    transition: all .2s ease-in-out;
+}
+.userName,::placeholder{
+    color: aliceblue;
+}
+.userName:focus,
+.userPassword:focus {
+    width: 20rem;
+    animation-name: colorChange;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes colorChange {
+
+    0% {
+        border-color: green;
+        color: green;
+    }
+
+    10% {
+        border-color: yellow;
+        color: yellow;
+
+    }
+
+    20% {
+        border-color: hotpink;
+        color: hotpink;
+    }
+
+    30% {
+        border-color: red;
+        color: red;
+    }
+
+    40% {
+        border-color: purple;
+        color: purple;
+    }
+
+    50% {
+        border-color: yellow;
+        color: yellow;
+
+    }
+
+    60% {
+        border-color: cyan;
+        color: cyan;
+    }
+
+    70% {
+        border-color: skyblue;
+        color: skyblue;
+    }
+
+    80% {
+        border-color: pink;
+        color: pink;
+    }
+
+    90% {
+        border-color: red;
+        color: red;
+    }
+
+    100% {
+        border-color: yellow;
+        color: yellow;
+    }
+}
+
+.loginBtn {
+    background: transparent;
+    border: 2px solid green;
+    padding: 1rem 3rem;
+    border-radius: 6rem;
+    text-decoration: underline;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.loginBtn:hover {
+    background: green;
+    border: 2px solid skyblue;
+}
+p {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        a {
+            color: #f5f0f0;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+    <form action="/login" method="post">
+        <!-- <center><h2 class="login-title"> Login </h2></center> -->
+        <center><i class="fas fa-user"></i></center> <br>
+       <center><input type="text" id="username" name="username" class="userName" placeholder="username" required></center> 
+        
+        <center><input type="password" id="password" name="password" class="userPassword" placeholder="password" required></center> 
+        <center><input type="checkbox" onchange="togglePassword()"/>show password </center> <br>
+       <center><button class="loginBtn" type="submit">Login</button></center> 
+        <p>Don't have an account?&nbsp;&nbsp;<a href="register">Register</a></p>
+    </form>
+</div>
+</body>
+<script>
+    function togglePassword(){
+    let x=document.getElementById("password");
+   x.type = (x.type === 'password')?
+   "text" : "password";
+}
+    </script>
+</html>
